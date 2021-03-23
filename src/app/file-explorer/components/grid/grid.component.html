@@ -1,0 +1,42 @@
+<div class="grid">
+  <table>
+    <thead>
+    <tr>
+      <th *ngFor="let field of fields">{{field.name}}
+        <fa-icon *ngIf="fileExplorerService.sortSettings.name !== field.name, else sortUp"
+                 [icon]="faSort" class="type-icon"
+                 (click)="fileExplorerService.columnSort(field)"></fa-icon>
+        <ng-template #sortUp>
+          <fa-icon *ngIf="fileExplorerService.sortSettings.name === field.name &&
+                    fileExplorerService.sortSettings.sortType === sortType.SORT_UP, else sortDown"
+                   [icon]="faSortUp" class="type-icon"
+                   (click)="fileExplorerService.columnSort(field)"></fa-icon>
+        </ng-template>
+        <ng-template #sortDown>
+          <fa-icon *ngIf="fileExplorerService.sortSettings.name === field.name &&
+                    fileExplorerService.sortSettings.sortType === sortType.SORT_DOWN"
+                   [icon]="faSortDown" class="type-icon"
+                   (click)="fileExplorerService.columnSort(field)"></fa-icon>
+        </ng-template>
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let file of fileExplorerService.currentRouteFiles">
+      <td *ngFor="let field of fields">
+        <div *ngIf="field.name === 'name'">
+          <fa-icon tabindex="1"
+                   *ngIf="file.type == 'folder', else elseBlock"
+                   [icon]="faFolder" class="type-icon"
+                   (keyup.enter)="fileExplorerService.navigate(file.path)"
+                   (dblclick)="fileExplorerService.navigate(file.path)"></fa-icon>
+          <ng-template #elseBlock>
+            <fa-icon [icon]="faFileAlt" class="type-icon" tabindex="2"></fa-icon>
+          </ng-template>
+        </div>
+        <span>{{file[field.name]}}</span>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

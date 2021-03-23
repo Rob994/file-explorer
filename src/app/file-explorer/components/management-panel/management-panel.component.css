@@ -1,0 +1,50 @@
+div.managementPanel{
+  display:flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  padding: 5px 10px;
+}
+
+div.managementPanel .nav-icon{
+  color: #1976d2;
+  transition: color 0.5s ease-in;
+  cursor: pointer;
+}
+
+div.managementPanel .nav-icon:hover{
+  color:#98c1f5 ;
+}
+
+img {
+  width: 65px;
+  height: 34px;
+  margin: 0;
+  padding: 0;
+}
+div.managementPanel input {
+  height: 34px;
+  border-radius: 5px;
+  border:1px solid #98c1f5;
+  transition: border 0.5s ease-in;
+  padding: 3px;
+}
+div.managementPanel input:focus{
+  border-color: #1976d2;
+  outline: none;
+}
+
+
+.pathArea {
+  width: 60%;
+}
+.search {
+  width: 28%;
+  margin-left: 10px;
+}
+
+
+@media screen and (max-width:787px){
+
+}
+

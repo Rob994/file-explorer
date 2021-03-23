@@ -1,0 +1,9 @@
+<div class="managementPanel">
+  <fa-icon [icon]="faArrowLeft" class="nav-icon" (click)="previous()"></fa-icon>
+  <input class="pathArea" type="text" placeholder="path"
+         [(ngModel)]="fileExplorerService.path"
+         (keyup.enter)="fileExplorerService.navigate(fileExplorerService.path)">
+  <input class="search" type="text" placeholder="search"
+         (keyup.enter)="fileExplorerService.search()" [(ngModel)]="fileExplorerService.searchValue">
+  <fa-icon [icon]="faSearch" class="nav-icon" (click)="fileExplorerService.search()"></fa-icon>
+</div>

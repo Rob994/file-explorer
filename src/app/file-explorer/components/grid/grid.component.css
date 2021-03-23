@@ -1,0 +1,35 @@
+div.grid {
+  padding: 10px;
+}
+div.grid table{
+  width: 100%;
+  user-select: none;
+}
+
+div.grid img {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+div.grid table tr {
+  margin: 5px 0;
+}
+
+div.grid table tr th:first-of-type  {
+  text-align: left;
+}
+
+div.grid table tr td {
+  text-align: center;
+}
+
+div.grid table tr td:first-of-type {
+  text-align: left;
+}
+
+div.grid table  .type-icon{
+   display: inline-block;
+  margin: 0 4px;
+ }
